@@ -1,9 +1,10 @@
+/* POLICE GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-
+/* COULEURS UTILISEES POUR LE STYLE */
 :root{
   --blanche: #ffff;
   --noir: #222;
-  --primaire: #689D71;
+  --vert: #689D71;
   --gris: #888;
   --marron: #462100;
   --background: #F4F4F4;
@@ -22,13 +23,14 @@ html{
   font-size: 62.5%;
   background-color: var(--background);
   height: 100%;
+  
 }
 
 body{
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   color: var(--noir);
-  background-color: var(--blanche);
+  background-color: var(--background);
 }
 
 ul, li{
@@ -43,9 +45,9 @@ a{
 img{
   max-width: 100;
 }
-
+/* STYLE DE LA BANNIERE */
 .banniere{
-  background-color: var(--primaire);
+  background-color: var(--vert);
   text-align: center;
   color: var(--blanche);
   padding: 0.5rem  0;
@@ -81,7 +83,7 @@ img{
 .menu .top{
   display: none;
 }
-
+/* STYLE DU LOGO */
 .logo{
   font-weight: 700;
   font-size: 2rem;
@@ -90,7 +92,15 @@ img{
 
 .logo span{
     font-size: 3rem;
-    color: var(--primaire);
+    color: var(--vert);
+}
+/* FIN DU STYLE DU LOGO */
+
+/* COULEUR QD ON POINTE UNE PAGE DU MENU */
+
+.nav{
+  background-color: var(--blanche);
+  width: 100%;
 }
 
 .nav-item:not(:last-child){
@@ -98,8 +108,9 @@ img{
 }
 
 .nav-item:first-child .nav-link{
-  color: var(--primaire);
+  color: var(--vert);
 }/* changer en fonction de la page, surement js */
+/* qd on est sur une page, il faut que ça soit coloré */
 
 .nav-link{
   padding: 0 1rem;
@@ -107,7 +118,7 @@ img{
 }
 
 .nav-link:hover{
-  color: var(--primaire);
+  color: var(--vert);
 }
 
 
@@ -123,7 +134,7 @@ img{
 }
 
 .nav .icons div:hover{
-  color: var(--primaire);
+  color: var(--vert);
 }
 
 .nav .icons div:last-child{
@@ -137,7 +148,7 @@ img{
   font-size: 1rem;
   font-weight: 600;
   color: var(--blanche);
-  background-color: var(--primaire);
+  background-color: var(--vert);
   height: 2.2rem;
   width: 2.2rem;
   border-radius: 50%;
@@ -180,7 +191,7 @@ img{
   }
 
   .logo span{
-    color: var(--primaire);
+    color: var(--vert);
   }
 
   .logo a{
@@ -191,7 +202,7 @@ img{
   .menu .top{
     display: block;
     position: relative;
-    background-color: var(--primaire);
+    background-color: var(--vert);
     width: 100%;
     height: 6rem;
     color: var(--blanche);
@@ -232,39 +243,11 @@ img{
   }
 }
 /* STYLE DE LA VITRINE */
-.vitrine{
-  height: calc(100vh - 7rem);
-  background-color: var(--background);
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-
-.vitrine-contenu{
-  height: 100%;
-}
-
-.vitrine-contenu .gauche{
-  margin-top: -5rem;
-}
-
-
-.vitrine-contenu .gauche .titre{
-  display: inline-block;
-  line-height: 13rem;
-  font-weight: 600;
-  text-align: left;
-  font-size: 4rem;
-}
-
-.vitrine-contenu .gauche .couleur{
-  color: var(--primaire);
-}
 
 .btn{
   display: inline-block;
   border-radius: 5rem;
-  background-color: var(--primaire);
+  background-color: var(--vert);
   padding: 1.3rem 5rem;
   color: var(--blanche);
   font-weight: 600;
@@ -274,17 +257,74 @@ img{
 
 /* FIN DU STYLE DE LA VITRINE */
 
-/* FOOTER */
-
-footer{
-  position: absolute;
-  bottom:0;
-  width: 100%;
-  padding-top:50px;
-  height:50px;
-}
+/* STYLE DU FOOTER */
 
 .footer{
-  background-color:white;
-  padding: 20px;
+  background-color: var(--marron);
+  padding: 6rem 1rem 0;
+  line-height: 3rem;
+  margin-top: 5rem;
 }
+
+.footer span{
+  margin-right: 1rem;
+}
+
+.footer-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: var(--blanche);
+}
+
+.footer-center a:link,
+.footer-center a:visited{
+  display: block;
+  color: var(--gris);
+  font-size: 1.4rem;
+  transition: 0.6s;
+}
+
+.footer-center a:hover{
+  color: var(--primaire);
+}
+
+.footer-center div{
+  font-size: 1.4rem;
+  color: var(--gris);
+}
+
+.footer-center h3{
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+/* FIN DU STYLE DU FOOTER */
+
+
+/* DEBUT DU COPYRIGHT */
+
+.copyright{
+    color: var(--gris);  
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 4rem 0 0;
+}
+/* FIN DU COPYRIGHT */
+
+/* DEBUT DU RESPONSIVE FOOTER */
+
+@media only screen and (max-width: 998px){
+  .footer-container{
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .footer-container{
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
+/* FIN DU RESPONSIVE FOOTER */
